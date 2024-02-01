@@ -16,6 +16,13 @@ app.get('/',(req,res)=>{
         res.status(500).json({error:error.message})
     }
 })
+app.get('/demo',(req,res)=>{
+    try {
+        res.status(200).json({msg:"welcome you are on demo page"})
+    } catch (error) {
+        res.status(500).json({error:error.message})
+    }
+})
 
 app.listen(port,async (req,res)=>{
     try {

@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.get('/',(req,res)=>{
     try {
-        res.status(200).json({msg:"welcome you are on Home screen"})
+        res.status(200).json({msg:"welcome you are on Home page"})
     } catch (error) {
         res.status(500).json({error:error.message})
     }

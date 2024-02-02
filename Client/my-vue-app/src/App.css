@@ -1,42 +1,71 @@
+.top{
+  margin: 0%;
+  padding: 0%;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width:100%;
+  
+}
+#nav{
+position: fixed;
+width: 100%;
+z-index: 1000;
+background-color:white;
+padding-bottom: 0;
+}
+#logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+ 
+  font-family: 'Bitter', serif;
+  
+  line-height: 1.2;
+}
+.footer{
+  display: flex;
+  justify-content: space-around;
+}
+.footer p {
+ 
+  text-decoration: none;
+  margin-right: 16px;
+  
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.footer p:hover {
+  color: #f00;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.footer-links p:hover{
+  color: #f00;
+  cursor: pointer;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+.footer-links {
+ display:flex ;
+ flex-direction: column;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.footer-links p:first-child{
+font-weight: bolder;
+font-size: large;
+margin-bottom: 1em;
 }
-
-.card {
-  padding: 2em;
+#mainfootercomponent{
+  background-color: #F0F3F5;
+  width: 100%;
+  padding-left: 15px;
+  color: black;
+  
 }
-
-.read-the-docs {
-  color: #888;
+.footer-copyright{
+  display: flex;
+  justify-content:space-around;
+  width: 60%;
+}
+#rights-reserved{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }

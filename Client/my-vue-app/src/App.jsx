@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Home from './pages/Home'
 
 import Navsection from './components/navsection'
 import Footer from './components/footer'
@@ -12,9 +13,7 @@ function App() {
 
   return (
     <div style={{width:"100%"}}>
-      {/* <Navbar22/> */}
-  
-<Navsection/>
+     <Navsection/>
     <h1 className="text-3xl font-bold underline">
       Hello world!
     </h1>
@@ -25,12 +24,11 @@ function App() {
     <br />
     <br />
     <br />
-    
-    
-   
     <Footer/>
     </div>
     
+
+ 
   )
 }
 

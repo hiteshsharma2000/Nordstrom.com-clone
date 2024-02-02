@@ -1,10 +1,4 @@
 import React from 'react'
-
-
-const Home = () => {
-  return (
-    <div>Home</div>
-
 import Navbar from '../components/navbar'
 
 const Home = () => {

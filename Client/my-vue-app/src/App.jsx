@@ -1,15 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import Home from './pages/Home'
 
 import Navsection from './components/navsection'
 import Footer from './components/footer'
+import Thethread from './components/Thethread'
+import Networthyslider from './components/networthyslider'
+import BannerSlider from './components/bannerSlider'
+import ProdductSlider from './components/productSlider'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <div style={{width:"100%"}}>
@@ -20,7 +23,19 @@ function App() {
     <br />
     <br />
     <br />
-    <br />
+
+<BannerSlider/>    
+       
+       <ProdductSlider/>
+       
+      
+    <Networthyslider/>
+  
+  
+  
+  
+
+    <Thethread/>
     <br />
     <br />
     <br />

@@ -33,22 +33,22 @@ const [slidesdata,setslidesdata]=useState([]);
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
           items: 5,
-          slidesToSlide: 5 // optional, default to 1.
+          slidesToSlide: 5 
         },
         tablet1: {
           breakpoint: { max: 1024, min: 900 },
           items: 4,
-          slidesToSlide: 4 // optional, default to 1.
+          slidesToSlide: 4 
         },
         tablet: {
           breakpoint: { max: 900, min: 464 },
           items: 3,
-          slidesToSlide: 3 // optional, default to 1.
+          slidesToSlide: 3 
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
           items: 1,
-          slidesToSlide: 1 // optional, default to 1.
+          slidesToSlide: 1 
         }
       };
 
@@ -60,9 +60,9 @@ const [slidesdata,setslidesdata]=useState([]);
  responsive={responsive}
  ssr={true}
  autoPlay={true}
- autoPlaySpeed={1000} // Set autoPlaySpeed to 500 milliseconds (0.5 seconds)
+ autoPlaySpeed={1000} 
  keyBoardControl={true}
- transitionDuration={700} // Set transition duration to 500 milliseconds (0.5 seconds)
+ transitionDuration={700} 
  containerClass="carousel-container"
  removeArrowOnDeviceType={["tablet", "mobile"]}
  dotListClass="custom-dot-list-style"

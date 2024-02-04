@@ -18,10 +18,7 @@ padding-bottom: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-
- 
-  font-family: 'Bitter', serif;
-  
+ font-family: 'Bitter', serif;
   line-height: 1.2;
 }
 .footer{
@@ -29,11 +26,8 @@ padding-bottom: 0;
   justify-content: space-around;
 }
 .footer p {
- 
   text-decoration: none;
-  margin-right: 16px;
-  
-}
+  margin-right: 16px;}
 .footer p:hover {
   color: #f00;
 }
@@ -44,7 +38,6 @@ padding-bottom: 0;
 .footer-links {
  display:flex ;
  flex-direction: column;
-
 }
 .footer-links p:first-child{
 font-weight: bolder;
@@ -56,7 +49,6 @@ margin-bottom: 1em;
   width: 100%;
   padding-left: 15px;
   color: black;
-  
 }
 .footer-copyright{
   display: flex;
@@ -73,24 +65,18 @@ margin-bottom: 1em;
   font-size: 1.6rem;
 }
 #thread > div > div > p{
-
  position: static;
-
- 
-
  margin-bottom: 1rem;
 }
 #img1{
-  width: 200%;
-            height: 100%;
-            object-fit: cover;
+width: 200%;
+ height: 100%;
+object-fit: cover;
 }
 #highlighted,#highlighted1,#highlighted3,#highlighted4{
 font-size: 1.1rem;
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-  margin-bottom: 1rem;
-
+ margin-bottom: 1rem;
 }
 .heading-slider{
   font-size: 1.5rem;
@@ -102,4 +88,4 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 }
 .discountprice{
   color: #f00;
-}
+ }

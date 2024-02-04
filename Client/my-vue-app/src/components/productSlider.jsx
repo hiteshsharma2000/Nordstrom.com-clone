@@ -72,9 +72,14 @@ const [slidesdata,setslidesdata]=useState([]);
     return(
         <div>
             <img src={ele.imgurl} alt="" />
+
             <h2 >{ele.title}</h2>
             <br />
             <p className='pricetag'>{ele.price}</p>
+
+            <h2>{ele.title}</h2>
+            <p>{ele.price}</p>
+
             <h2>★★★★☆</h2>
         </div>
     )

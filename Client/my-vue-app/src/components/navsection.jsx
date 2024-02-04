@@ -8,7 +8,7 @@ const Navsection = () => {
       <div className="container mx-0">
         <div className="flex items-center justify-between">
         <div className="font-bold text-[.7em] w-auto md:text-[2em] sm:text-[1em]" id='logo'>
-        <span classname="text-black-500 w-auto" >NORDSTROM</span>
+        <span className="text-black-500 w-auto" >NORDSTROM</span>
   {/* <img className='w-8 h--[2em] sm:w-auto sm:h-auto' src={logo1} alt="" /> */}
 </div>
 

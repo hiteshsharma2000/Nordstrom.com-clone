@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return(
       <div style={{width:"100%"}}>
-         <div className='flex flex-wrap justify-start md:justify-end sm:justify-start  md:justify-end sm:text-center md:text-center md:items-center w-full '>
+       <div className='static flex flex-wrap justify-start md:justify-end sm:justify-start  md:justify-end sm:text-center md:text-center md:items-center w-full '>
       <p className='text-[1.2em] ml-1 sm:ml-4 md:ml-6 lg:ml-0'>Get Email Updates:&nbsp;&nbsp;</p>
       <input
         type="text"

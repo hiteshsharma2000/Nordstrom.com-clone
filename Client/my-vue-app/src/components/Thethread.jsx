@@ -3,9 +3,18 @@ import React from 'react'
 const Thethread = () => {
   return (
     <>
+
+    <hr style={{width:"97%",margin:"auto",border:".6px solid black"}}/>
+    <br />
+    <br />
+    <div className='text-center align-center grid gap-2'>
+
+        <h3 className='font-bold text-[1.4rem]'>T H E&nbsp; T H R E A D</h3>
+
     <div className='text-center align-center grid gap-2'>
 
         <h3 className='font-bold text-[1.4rem]'>THE THREAD</h3>
+
         <p>Your go-to destination for all things fashion, beauty and lifestyle at Nordstrom.</p>
    
         <h4 className='underline hover:font-bold text-[1.1rem] '>Get Inspired
@@ -38,12 +47,19 @@ const Thethread = () => {
             <h3>The Buy: 6 Wear-Forever Jewelry Pieces We Love</h3>
             <p>Our team shares the fine and designer baubles currently topping their wish lists.</p>
             <div className='md:flex lg:flex gap-[20px]' >
+
+               <p className=' border-b-2 hover:border-black '>Shop Fine Jewelry</p>
+
                <p className='border-b-2 hover:border-black '>Shop Fine Jewelry</p>
+
                <p className='border-b-2 hover:border-black '>Read the Story</p>
             </div>
         </div>
         
     </div>
+
+   
+
     </>
   )
 }

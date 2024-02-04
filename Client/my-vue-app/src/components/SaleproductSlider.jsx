@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 
-const ProdductSlider = () => {
+const SaleProductSlider = () => {
 const [slidesdata,setslidesdata]=useState([]);
 
     const getsliderdata=async ()=>{
@@ -56,7 +56,7 @@ const [slidesdata,setslidesdata]=useState([]);
     <div className='ml-[3%]'>
     <Carousel
  swipeable={false}
- draggable={false}
+ draggable={true}
  responsive={responsive}
  ssr={true}
  autoPlay={true}
@@ -72,14 +72,12 @@ const [slidesdata,setslidesdata]=useState([]);
     return(
         <div>
             <img src={ele.imgurl} alt="" />
-
             <h2 >{ele.title}</h2>
             <br />
             <p className='pricetag'>{ele.price}</p>
-
-            <h2>{ele.title}</h2>
-            <p>{ele.price}</p>
-
+            <h2 className='discountprice' >Current Price INR 2,027.96 to INR 4,784.95</h2>
+            <p className='discountprice'>(Up to 20% off select items)</p>
+            <s className='pricetag'>{ele.price}</s>
             <h2>★★★★☆</h2>
         </div>
     )
@@ -90,4 +88,4 @@ const [slidesdata,setslidesdata]=useState([]);
   )
 }
 
-export default ProdductSlider
+export default SaleProductSlider

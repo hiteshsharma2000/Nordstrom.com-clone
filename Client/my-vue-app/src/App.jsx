@@ -1,4 +1,8 @@
 import './App.css'
+
+import Home from './pages/Home'
+
+
 import Navsection from './components/navsection'
 import Footer from './components/footer'
 import Thethread from './components/Thethread'
@@ -7,10 +11,15 @@ import BannerSlider from './components/bannerSlider'
 import ProdductSlider from './components/productSlider'
 
 
+
 function App() {
   
 
   return (
+
+   <>
+   <Home/>
+   </>
     <div style={{width:"100%"}}>
      <Navsection/>
     <br />
@@ -30,6 +39,7 @@ function App() {
     <br />
     <Footer/>
     </div>
+
   )
 }
 

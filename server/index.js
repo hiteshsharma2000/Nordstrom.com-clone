@@ -2,12 +2,20 @@ const express=require('express');
 require("dotenv").config()
 const app=express();
 const port =process.env.PORT
-
-
-
+const {connection}=require('./db')
+const {sliderRouter}=require("./routers/SliderRoute");
+const {categoryRoute}=require('./routers/CategoryRoute')
+const {shopRoute}=require('./routers/shopRoute');
+const {trendingRoute}=require('./routers/TrendingRoute')
+const cors=require('cors')
 app.use(express.json());
-
-
+app.use(cors({
+    origin:"*"
+}))
+app.use(sliderRouter)
+app.use(categoryRoute)
+app.use(shopRoute)
+app.use(trendingRoute)
 
 app.get('/',(req,res)=>{
     try {
@@ -26,6 +34,7 @@ app.get('/demo',(req,res)=>{
 
 app.listen(port,async (req,res)=>{
     try {
+        await connection
         console.log(`your server is running on port ${port}`);
     } catch (error) {
         console.log(error.message)

@@ -16,7 +16,7 @@ const Thethread = () => {
     </div>
     <br />
     <br />
-    <div id="thread" className='grid grid-cols-1 ml-[22px] mr-[10px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-[2]'>
+    <div id="thread" className=' grid grid-cols-1 ml-[22px] mr-[10px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-[2]'>
         
         <div className='grid gap-2.5' >
             <img src="https://n.nordstrommedia.com/it/effaf479-54ca-493b-9faf-8bd46df3463b.jpeg?h=516&w=536" alt="" />

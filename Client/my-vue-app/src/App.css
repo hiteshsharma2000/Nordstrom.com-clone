@@ -93,6 +93,7 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-left: 1rem;
+  margin-bottom: 0;
 }.pricetag{
   font-weight: bold;
 }
@@ -100,3 +101,11 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
   color: #f00;
  
 }
+.span{
+  text-decoration: underline;
+}
+label{
+  font-weight:700 ;
+  color: rgb(53, 53, 53);
+}
+

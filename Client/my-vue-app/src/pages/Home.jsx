@@ -8,21 +8,23 @@ import BannerSlider from '../components/bannerSlider'
 import ProdductSlider from '../components/productSlider'
 import SaleProductSlider from '../components/SaleproductSlider'
 import Networthypart2 from '../components/networthypart2'
+import Category from '../components/Category'
+import SecondCategory from '../components/Second.Category'
+import ShopByCtaegory from '../components/ShopByCategory'
+
 const Home = () => {
   return (
     <div style={{width:"100%"}}>
-  
-  
-    <Navsection/>
+  <Navsection/>
     <br />
     <br />
     <br />
-    <br />
-
 <BannerSlider/>    
-    <h2 className='heading-slider'>Top picks for you</h2>   
-    <br />
-<ProdductSlider/>
+
+    <h2 className='mt-[4rem] heading-slider'>Top picks for you</h2>   
+
+ <SecondCategory/>
+ <ProdductSlider/>
        <br />
       
 <Networthyslider/>
@@ -34,19 +36,28 @@ const Home = () => {
 <Networthypart2/>
 <h2 className='heading-slider'>Valentine's Day Picks</h2>   
     <br />
+    <SecondCategory/>
+    
+   <br />
 <ProdductSlider/>
        <br />
  <Thethread/>
  <h2 className='heading-slider'>Great Deals on What You Love</h2>   
  <p className='ml-[1rem]'>Items similar to what you've browsed are on sale</p>
     <br />
+    <SecondCategory/>
+   
+   <br />
    <SaleProductSlider/>
 
        <br />
     <br />
     <br />
     <br />
-    
+    <br />
+   <ShopByCtaegory/>
+   <br />
+   <br />
     <Footer/>
     </div>
   )

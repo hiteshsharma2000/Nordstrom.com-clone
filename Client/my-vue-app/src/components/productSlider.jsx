@@ -16,7 +16,7 @@ const [slidesdata,setslidesdata]=useState([]);
             })
             responce=await responce.json()
             setslidesdata(responce.detail)
-        console.log(responce.detail);
+        // console.log(responce.detail);
         } catch (error) {
             console.log(error.message);
         }
@@ -53,7 +53,7 @@ const [slidesdata,setslidesdata]=useState([]);
       };
 
   return (
-    <div className='ml-[3%]'>
+    <div className='ml-[3%] '>
     <Carousel
  swipeable={false}
  draggable={false}
@@ -62,7 +62,7 @@ const [slidesdata,setslidesdata]=useState([]);
  autoPlay={true}
  autoPlaySpeed={1000} 
  keyBoardControl={true}
- transitionDuration={700} 
+ transitionDuration={500} 
  containerClass="carousel-container"
  removeArrowOnDeviceType={["tablet", "mobile"]}
  dotListClass="custom-dot-list-style"
@@ -70,7 +70,7 @@ const [slidesdata,setslidesdata]=useState([]);
 >
   {slidesdata.map((ele)=>{
     return(
-        <div>
+        <div key={ele._id}>
             <img src={ele.imgurl} alt="" />
             <h2 >{ele.title}</h2>
             <br />

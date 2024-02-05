@@ -70,7 +70,7 @@ const [slidesdata,setslidesdata]=useState([]);
 >
   {slidesdata.map((ele)=>{
     return(
-        <div>
+        <div key={ele._id}>
             <img src={ele.imgurl} alt="" />
             <h2 >{ele.title}</h2>
             <br />

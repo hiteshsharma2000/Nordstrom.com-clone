@@ -3,16 +3,15 @@ import React from 'react';
 
 const Navsection = () => {
   return (
+    
     <nav className="bg-white-800 text-black p-4" id='nav'>
         <br />
       <div className="container mx-0">
         <div className="flex items-center justify-between">
         <div className="font-bold text-[.7em] w-auto md:text-[2em] sm:text-[1em]" id='logo'>
         <span className="text-black-500 w-auto" >NORDSTROM</span>
-  {/* <img className='w-8 h--[2em] sm:w-auto sm:h-auto' src={logo1} alt="" /> */}
-</div>
-
-          <div className=" sm:flex  w-[300em] ml-10 sm:ml-10 lg:ml-40">
+  </div>
+         <div className=" sm:flex  w-[300em] ml-10 sm:ml-10 lg:ml-40">
             <SearchSection />
           </div>
           <div className="flex  space-x-2 text-[1em] bg-white">

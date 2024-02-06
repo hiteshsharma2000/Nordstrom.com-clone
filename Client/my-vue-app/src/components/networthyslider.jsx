@@ -12,11 +12,13 @@ const Networthyslider = () => {
   const handleBackClick = () => {
     Slider.ButtonBack;
   };
+
   const handleNextClick = () => {
     Slider.ButtonNext;
   };
+
   return (
-    <div className="mb-4 pb-0 h-[45vh] sm:h-[50vh] md:h-[50vh] lg:h-[50vh] md:mb-[24rem] lg:mb-[24rem] ">
+    <div className="mb-5 pb-0 h-[45vh] sm:h-[50vh] md:h-[50vh] lg:h-[50vh] md:mb-[24rem] lg:mb-[24rem] ">
       <hr style={{ width: "97%", margin: "auto", border: "1px solid black" }} />
       <br />
       <br />{" "}
@@ -24,7 +26,7 @@ const Networthyslider = () => {
         N E W & N O T E W O R T H Y
       </h1>
       <br />
-      <br />{" "}
+      <br />
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={125}
@@ -91,7 +93,7 @@ const Networthyslider = () => {
             </div>
           </Slide>
         </Slider>
-        <div className="invisible sm:visible md:visible lg:visible  absolute top-0 left-0 right-0 bottom-[8%] flex items-center  justify-between">
+        <div className="invisible sm:visible md:visible lg:visible  absolute top-0 left-0 right-0 bottom-[45%] flex items-center  justify-between">
           <ButtonBack
             className="absolute left-0 p-4 text-[2rem]  opacity-40 hover:opacity-100 hover:bg-black-700 "
             onClick={handleBackClick}

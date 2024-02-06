@@ -51,12 +51,13 @@ const SaleProductSlider = () => {
   return (
     <div className="ml-[3%]">
       <Carousel
-        swipeable={false}
+        swipeable={true}
         draggable={true}
         responsive={responsive}
+        infinite={true}
         ssr={true}
         autoPlay={true}
-        autoPlaySpeed={1000}
+        autoPlaySpeed={3000}
         keyBoardControl={true}
         transitionDuration={700}
         containerClass="carousel-container"
@@ -66,7 +67,7 @@ const SaleProductSlider = () => {
       >
         {slidesdata.map((ele) => {
           return (
-            <div>
+            <div key={ele._id}>
               <img src={ele.imgurl} alt="" />
               <h2>{ele.title}</h2>
               <br />

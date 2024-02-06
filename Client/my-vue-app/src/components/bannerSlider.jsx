@@ -10,7 +10,9 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 
 const BannerSlider = () => {
   return (
-    <div className="mb-[3rem] h-[45vh] sm:h-[60vh] md:h-[60vh] lg:h-[60vh] md:mb-[18rem] lg:mb-[18rem] ">
+    <div className="mb-[8rem] sm:mb-0   h-[45vh]  md:h-[60vh] lg:h-[60vh] md:mb-[18rem] lg:mb-[18rem] ">
+      <br />
+
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={125}

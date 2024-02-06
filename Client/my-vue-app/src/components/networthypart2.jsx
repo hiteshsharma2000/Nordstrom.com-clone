@@ -3,7 +3,7 @@ import React from "react";
 const Networthypart2 = () => {
   return (
     <div
-      className="grid grid-cols-1 mt-0 ml-[22px] mr-[10px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-[2]"
+      className="mt-[5rem] sm:mt-[12rem] md:mt-0 lg:mt-0 grid grid-cols-1 mt-0 ml-[22px] mr-[10px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-[2]"
       style={{ borderBottom: "2px solid black" }}
     >
       <div className="text-start grid pl-[1rem] items-center">

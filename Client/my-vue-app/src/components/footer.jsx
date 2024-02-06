@@ -1,6 +1,14 @@
 import React from "react";
 
 const Footer = () => {
+  const getupdatesonemail = () => {
+    try {
+      alert("you are In for getting updates");
+    } catch (error) {
+      alert("something went wrong");
+    }
+  };
+
   return (
     <div style={{ width: "100%" }}>
       <div className="static flex flex-wrap justify-start md:justify-end sm:justify-start  md:justify-end sm:text-center md:text-center md:items-center w-full ">
@@ -13,11 +21,16 @@ const Footer = () => {
           placeholder="Email Address"
         />
         <button
+          onClick={getupdatesonemail}
           style={{ borderRadius: "0", marginRight: "15px" }}
           className="bg-black text-white text-center  lg:text-base h-[2.7rem] lg:pr-[10rem] lg:pl-[6rem] g-[5px] lg:h-[2.7rem] w-auto lg:w-[7rem] ml-2 "
         >
           Sign&nbsp;up
         </button>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
       <div id="mainfootercomponent">
         <div className="container  py-8">

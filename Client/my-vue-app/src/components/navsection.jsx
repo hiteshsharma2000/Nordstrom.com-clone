@@ -8,10 +8,11 @@ const Navsection = () => {
         <div className="flex items-center justify-between">
           <div
             className="font-bold text-[.7em] w-auto md:text-[2em] sm:text-[1em]"
-            id="logo">
+            id="logo"
+          >
             <span className="text-black-500 w-auto">NORDSTROM</span>
           </div>
-           <div className=" sm:flex  w-[300em] ml-10 sm:ml-10 lg:ml-40">
+          <div className=" sm:flex  w-[300em] ml-10 sm:ml-10 lg:ml-40">
             <SearchSection />
           </div>
           <div className="flex  space-x-2 text-[1em] bg-white">
@@ -23,13 +24,16 @@ const Navsection = () => {
                 >
                   create account
                 </button>,
-                "Pants",
+                <h2 className="text-[1.3rem] font-bold">Your Account</h2>,
+                "purchases",
+                "Wishlist",
                 "Shoes",
               ]}
             />
+
             <NavItem
               label="Sign&nbsp;In&nbsp;>"
-              subItems={["Shirts", "Pants", "Shoes"]}
+              subItems={["Shirts", "Pants", "xAXa"]}
             />
             <NavItem
               label="Sign&nbsp;In&nbsp;>"
@@ -47,18 +51,18 @@ const Navsection = () => {
 const NavItem = ({ label, subItems }) => {
   return (
     <div className="relative group text-[.5em] sm:text-base md:text-lg lg:text-xl ">
-      <div className="cursor-pointer hover:bg-white-800 px-3 py-2 rounded transition duration-300 ">
+      <div className="cursor-pointer hover:bg-white-800 px-3  rounded transition duration-300 ">
         {label}
       </div>
       {subItems && (
         <div
-          className="hidden group-hover:block absolute left-0 top-full bg-white-800 p-4 rounded shadow-md px-[2.5em] pb-[4em]"
+          className="hidden text-start text-[black] group-hover:block absolute left-0 top-full bg-white-800 p-4 rounded shadow-md px-[2.5em] pb-[4em]"
           style={{ backgroundColor: "white" }}
         >
           {subItems.map((item) => (
             <div
               key={item}
-              className="text-xs sm:text-sm md:text-base lg:text-lg"
+              className="hover:underline cursor:pointer text-xs sm:text-sm md:text-base lg:text-lg"
             >
               <br />
               {item}

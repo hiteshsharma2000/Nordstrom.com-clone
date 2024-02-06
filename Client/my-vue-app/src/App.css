@@ -1,91 +1,113 @@
-.top{
+.top {
   margin: 0%;
   padding: 0%;
 }
 
 #root {
-  max-width:100%;
+  max-width: 100%;
   position: relative;
 }
-#nav{
-position: fixed;
-width: 100%;
-z-index: 1000;
-background-color:white;
-padding-bottom: 0;
+#nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  padding-bottom: 0;
 }
 #logo {
   display: flex;
   flex-direction: row;
   align-items: center;
- font-family: 'Bitter', serif;
+
+  font-family: "Bitter", serif;
+
   line-height: 1.2;
 }
-.footer{
+.footer {
   display: flex;
   justify-content: space-around;
 }
 .footer p {
   text-decoration: none;
-  margin-right: 16px;}
+  margin-right: 16px;
+}
+/* custom-carousel-styles.css */
+.carousel-container .react-multi-carousel-dot button {
+  background-color: black !important;
+}
+
 .footer p:hover {
   color: #f00;
 }
-.footer-links p:hover{
+.footer-links p:hover {
   color: #f00;
   cursor: pointer;
 }
 .footer-links {
- display:flex ;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-.footer-links p:first-child{
-font-weight: bolder;
-font-size: large;
-margin-bottom: 1em;
+.footer-links p:first-child {
+  font-weight: bolder;
+  font-size: large;
+  margin-bottom: 1em;
 }
-#mainfootercomponent{
-  background-color: #F0F3F5;
+#mainfootercomponent {
+  background-color: #f0f3f5;
   width: 100%;
   padding-left: 15px;
   color: black;
 }
-.footer-copyright{
+.footer-copyright {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   width: 60%;
 }
-#rights-reserved{
+#rights-reserved {
   display: flex;
   justify-content: flex-start;
   width: 100%;
 }
-#thread div h3{
-  font-weight:bold ;
+#thread div h3 {
+  font-weight: bold;
   font-size: 1.6rem;
 }
-#thread > div > div > p{
- position: static;
- margin-bottom: 1rem;
+#thread > div > div > p {
+  position: static;
+  margin-bottom: 1rem;
 }
-#img1{
-width: 200%;
- height: 100%;
-object-fit: cover;
+#img1 {
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
 }
-#highlighted,#highlighted1,#highlighted3,#highlighted4{
-font-size: 1.1rem;
-font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- margin-bottom: 1rem;
+#highlighted,
+#highlighted1,
+#highlighted3,
+#highlighted4 {
+  font-size: 1.1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  margin-bottom: 1rem;
 }
-.heading-slider{
+.heading-slider {
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-left: 1rem;
-}.pricetag{
+  margin-bottom: 0;
+}
+.pricetag {
   font-weight: bold;
 }
-.discountprice{
+.discountprice {
   color: #f00;
- }
+}
+.span {
+  text-decoration: underline;
+}
+label {
+  font-weight: 700;
+  color: rgb(53, 53, 53);
+}

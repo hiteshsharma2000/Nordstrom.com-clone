@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+import Cookies from 'js-cookie'
+import Navsection from "../components/Navsection";
 const Product = () => {
   const [product, setproduct] = useState([]);
 
@@ -9,6 +10,7 @@ const Product = () => {
         method: "GET",
         headers: {
           "Conetnt-Type": "application/json",
+          "authorization" :` ${Cookies.get("token")}`
         },
       });
       responce = await responce.json();
@@ -24,6 +26,11 @@ const Product = () => {
   }, []);
 
   return (
+    <>
+    <Navsection />
+      <br />
+      <br />
+      <br />
     <div className="flex w-full">
       <div
         className="w-[80%] text-center grid gap-[2rem]"
@@ -67,6 +74,7 @@ const Product = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import AllRoutes from "./AllRoutes";
 import "./App.css";
 import Home from "./pages/Home";
 import Product from "./pages/product";
@@ -5,7 +6,7 @@ import Product from "./pages/product";
 function App() {
   return (
     <div style={{ width: "100%" }}>
-      <Home/>
+      <AllRoutes/> 
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-
+import Cookies from 'js-cookie'
+import { useNavigate } from "react-router-dom";
+import Navsection from "../components/Navsection";
 const Login = () => {
+  const navigate = useNavigate();
   const [loginuser, setloginuser] = useState({
     Email: "",
     password: "",
@@ -13,11 +16,39 @@ const Login = () => {
       [name]: value,
     });
   };
-  const handlesubmit = () => {
+  const handlesubmit = async() => {
     console.log(loginuser);
+    try {
+      let response = await fetch("http://localhost:8080/users/login", { 
+        method: "POST",
+        body: JSON.stringify(loginuser),
+        headers: {
+          "Content-type":"application/json"
+        }
+      });
+      
+      let data = await response.json()
+      if(data.token){
+        alert('login succesfully')
+        console.log(data.token)
+        Cookies.set('token',data.token)
+        navigate('/product')
+      }else{
+        alert('wrong details')
+      }
+     
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
   };
 
   return (
+    <>
+     <Navsection/>
+      <br />
+      <br />
+      <br />
     <div className="  ml-[10%] text-start sm:ml-[40%] md:ml-[40%] lg:ml-[40%] w-full ">
       <br />
       <br />
@@ -69,6 +100,7 @@ const Login = () => {
         Login&nbsp;Account
       </button>
     </div>
+    </>
   );
 };
 

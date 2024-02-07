@@ -14,6 +14,8 @@ const BannerSlider = () => {
       <br />
 
       <CarouselProvider
+      swipeable={true}
+      draggable={true}
         naturalSlideWidth={100}
         naturalSlideHeight={125}
         totalSlides={2}

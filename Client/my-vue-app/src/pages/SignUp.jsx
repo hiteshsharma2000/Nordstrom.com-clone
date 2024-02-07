@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Navsection from "../components/Navsection";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [registeruser, setregisteruser] = useState({
@@ -7,6 +9,13 @@ const SignUp = () => {
     Email: "",
     password: "",
   });
+
+
+
+
+
+
+  
   const handlechange = (e) => {
     const { name, value } = e.target;
     setregisteruser({
@@ -15,16 +24,42 @@ const SignUp = () => {
     });
   };
 
-  const handlesubmit = () => {
+  const handlesubmit =async () => {
     console.log(registeruser);
-  };
+    try {
+      let response = await fetch("http://localhost:8080/users/register", { 
+        method: "POST",
+        body: JSON.stringify(registeruser),
+        headers: {
+          "Content-type":"application/json"
+        }
+      });
+      alert('new user has been created')
+      let data = await response.text();
+      console.log(data);
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+    }
+  
+
+
+
+
+  
   return (
+    <>
+     <Navsection />
+      <br />
+      <br />
+   
     <div className="  ml-[10%] text-start sm:ml-[40%] md:ml-[40%] lg:ml-[40%] w-full ">
       <br />
       <br />
       <br />
       <p className="font-bold text-[1.3rem]">Create Account&nbsp;</p>
-      <br />
+      
       <div className="text-start grid gap-[.5rem]">
         <p>Check out faster</p>
         <p>Track orders easily</p>
@@ -100,7 +135,10 @@ const SignUp = () => {
       >
         Create&nbsp;Account
       </button>
+      <br />
+     <Link to='/login'><p>Already have an account ?</p></Link> 
     </div>
+    </>
   );
 };
 

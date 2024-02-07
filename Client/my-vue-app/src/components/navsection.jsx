@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import Cookies from 'js-cookie'
 const Navsection = () => {
   return (
     <nav className="bg-white-800 text-black p-4" id="nav">
@@ -10,7 +11,7 @@ const Navsection = () => {
             className="font-bold text-[.7em] w-auto md:text-[2em] sm:text-[1em]"
             id="logo"
           >
-            <span className="text-black-500 w-auto">NORDSTROM</span>
+           <Link to='/'  > <span className="text-black font-[1000] w-auto">NORDSTROM</span></Link>
           </div>
           <div className=" sm:flex  w-[300em] ml-10 sm:ml-10 lg:ml-40">
             <SearchSection />
@@ -19,26 +20,26 @@ const Navsection = () => {
             <NavItem
               label="Sign&nbsp;In&nbsp;>"
               subItems={[
+                <Link to='/register' >
+
+               
                 <button
                   style={{ color: "white", width: "10em", borderRadius: "0px" }}
                 >
                   create account
-                </button>,
+                </button>
+                </Link> ,
                 <h2 className="text-[1.3rem] font-bold">Your Account</h2>,
                 "purchases",
                 "Wishlist",
                 "Shoes",
               ]}
             />
+            {Cookies.get('token') ? <Link to='/product'>Shop</Link>:<Link to='/login'>Shop</Link> }
 
-            <NavItem
-              label="Sign&nbsp;In&nbsp;>"
-              subItems={["Shirts", "Pants", "xAXa"]}
-            />
-            <NavItem
-              label="Sign&nbsp;In&nbsp;>"
-              subItems={["Shirts", "Pants", "Shoes"]}
-            />
+           
+            <Link to='/product'>Cart</Link>
+           
           </div>
         </div>
       </div>

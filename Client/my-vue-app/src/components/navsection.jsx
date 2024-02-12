@@ -1,7 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie'
 const Navsection = () => {
+  const navigate=useNavigate()
+const logout=()=>{
+  Cookies.remove('token')
+  navigate('/')
+}
+
   return (
     <nav className="bg-white-800 text-black p-4" id="nav">
       <br />
@@ -11,35 +17,37 @@ const Navsection = () => {
             className="font-bold text-[.7em] w-auto md:text-[2em] sm:text-[1em]"
             id="logo"
           >
-           <Link to='/'  > <span className="text-black font-[1000] w-auto">NORDSTROM</span></Link>
+           <Link to='/'  > <span className="text-black font-[550] w-auto" id='log'>NORDSTROM</span></Link>
           </div>
           <div className=" sm:flex  w-[300em] ml-10 sm:ml-10 lg:ml-40">
             <SearchSection />
           </div>
           <div className="flex  space-x-2 text-[1em] bg-white">
             <NavItem
-              label="Sign&nbsp;In&nbsp;>"
+              label={!Cookies.get('token') ? <Link style={{color:"black",textDecoration:"none",font:"bold",fontSize:"1.2rem"}} >Sign&nbsp;In</Link>: <Link style={{color:"black",textDecoration:"none",font:"bold",fontSize:"1.2rem"}} to='/product'>user</Link>}
               subItems={[
                 <Link to='/register' >
 
-               
-                <button
+                {!Cookies.get('token') ?  <button
                   style={{ color: "white", width: "10em", borderRadius: "0px" }}
                 >
                   create account
-                </button>
+                </button>: <button
+                  style={{ color: "white", width: "10em", borderRadius: "0px" }}
+                  onClick={()=>{ logout()}}
+                >
+                  Logout
+                </button>}
+               
                 </Link> ,
                 <h2 className="text-[1.3rem] font-bold">Your Account</h2>,
                 "purchases",
                 "Wishlist",
                 "Shoes",
+                
               ]}
             />
-            {Cookies.get('token') ? <Link to='/product'>Shop</Link>:<Link to='/login'>Shop</Link> }
-
-           
-            <Link to='/product'>Cart</Link>
-           
+            {Cookies.get('token') ? <Link style={{color:"black",textDecoration:"none",font:"bold",fontSize:"1.2rem"}} to='/product'>Shop</Link>:<Link style={{fontSize:"1.2rem",font:"bold",color:"black",textDecoration:"none"}} to='/login'>Shop</Link> }
           </div>
         </div>
       </div>
@@ -51,13 +59,13 @@ const Navsection = () => {
 
 const NavItem = ({ label, subItems }) => {
   return (
-    <div className="relative group text-[.5em] sm:text-base md:text-lg lg:text-xl ">
-      <div className="cursor-pointer hover:bg-white-800 px-3  rounded transition duration-300 ">
+    <div className="relative group text-[.5em] lg:right-10 md:right-10 sm:text-base md:text-lg lg:text-xl ">
+      <div className="cursor-pointer hover:bg-white-800 px-5 right-5 rounded transition duration-300 ">
         {label}
       </div>
       {subItems && (
         <div
-          className="hidden text-start text-[black] group-hover:block absolute left-0 top-full bg-white-800 p-4 rounded shadow-md px-[2.5em] pb-[4em]"
+          className="hidden text-start text-[black] group-hover:block absolute left-0  top-full bg-white-800 p-4 rounded shadow-md px-[2.5em] pb-[4em]"
           style={{ backgroundColor: "white" }}
         >
           {subItems.map((item) => (

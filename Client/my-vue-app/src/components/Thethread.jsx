@@ -1,6 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Thethread = () => {
+
+    const [threaddata, setthreaddata] = useState([]);
+
+    const getthreaddata = async () => {
+      try {
+        let responce = await fetch("https://nordstrombackend-production.up.railway.app/thread", {
+          method: "GET",
+          headers: {
+            "Conetnt-Type": "application/json",
+          },
+        });
+        responce = await responce.json();
+        setthreaddata(responce.data);
+        console.log(responce.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    useEffect(() => {
+      getthreaddata();
+    }, []);
+
   return (
     <>
     <hr style={{width:"97%",margin:"auto",border:".6px solid black"}}/>
@@ -17,36 +40,20 @@ const Thethread = () => {
     <br />
     <br />
     <div id="thread" className=' grid grid-cols-1 ml-[22px] mr-[10px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-[2]'>
-        
-        <div className='grid gap-2.5' >
-            <img src="https://n.nordstrommedia.com/it/effaf479-54ca-493b-9faf-8bd46df3463b.jpeg?h=516&w=536" alt="" />
-            <h3>The Valentine's Day Dress Edit</h3>
-            <p>No matter what you're up to this V-Day, there's a sweet one-and-done dress style to suit your mood and plans.</p>
+        {threaddata.map((ele)=>{
+return(
+    <div className='grid gap-2.5' key={ele._id} >
+            <img  src={ele.imgurl} alt="" />
+            <h3 style={{cursor:"pointer"}}>{ele.title}</h3>
+            <p style={{cursor:"pointer"}}>{ele.description}</p>
             <div  className='md:flex lg:flex gap-[20px]  mb-2' >
-               <p className='border-b-2 hover:border-black '>Shop Valentine's Day Dresses</p>
-               <p className='border-b-2 hover:border-black '>Read the Story</p>
+               <p className='border-b-2 hover:border-black' style={{cursor:"pointer"}}>{ele.para1}</p>
+               <p className='border-b-2 hover:border-black ' style={{cursor:"pointer"}}>{ele.para2}</p>
             </div>
         </div>
-        <div className='grid gap-2.5'>
-            <img src="https://n.nordstrommedia.com/it/b6d8f9a3-307b-45b6-a43a-9bbc8371dced.jpeg?h=516&w=536" alt="" />
-            <h3>Spotlight On: Marco De Vincenzo, Designer & Etro Creative Director</h3>
-            <p>Dive into Etro's latest runway collection with creative director Marco De Vincenzo.</p>
-            <div className='md:flex lg:flex gap-[20px]' >
-               <p className='border-b-2 hover:border-black '>Shop Etro</p>
-               <p className='border-b-2 hover:border-black '>Read the Story</p>
-            </div>
-        </div>
-        <div className='grid gap-2.5'>
-            <img src="https://n.nordstrommedia.com/it/76a99da3-36c4-483b-af89-73b7ea9ce9e0.jpeg?h=516&w=536" alt="" />
-            <h3>The Buy: 6 Wear-Forever Jewelry Pieces We Love</h3>
-            <p>Our team shares the fine and designer baubles currently topping their wish lists.</p>
-            <div className='md:flex lg:flex gap-[20px]' >
-               <p className=' border-b-2 hover:border-black '>Shop Fine Jewelry</p>
-               <p className='border-b-2 hover:border-black '>Read the Story</p>
-            </div>
-        </div>
-        
-    </div>
+)
+ })}
+       </div>
    
     </>
   )

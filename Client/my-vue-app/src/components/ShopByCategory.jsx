@@ -1,15 +1,27 @@
+import Cookies from 'js-cookie';
 import React from 'react'
 import  { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 const ShopByCtaegory = () => {
+    
+  const navigate=useNavigate()
     const [categorydata,setcategorydata]=useState([]);
     const [currentdata,setcurrentdata]=useState([]);
 
 
-
+    const handlenavigate=()=>{
+        if(Cookies.get('token')){
+         navigate('/product')
+       
+        }else{
+         navigate('/login')
+        }
+       }
 
     const getcategorydata=async ()=>{
         try {
-            let responce=await fetch('http://localhost:8080/category',{
+            let responce=await fetch('https://nordstrombackend-production.up.railway.app/category',{
                 method:"GET",
                 headers:{
                     "Conetnt-Type":"application/json"
@@ -24,7 +36,7 @@ const ShopByCtaegory = () => {
         }
     const getcurrentdata=async ()=>{
         try {
-            let responce=await fetch('http://localhost:8080/shop',{
+            let responce=await fetch('https://nordstrombackend-production.up.railway.app/shop',{
                 method:"GET",
                 headers:{
                     "Conetnt-Type":"application/json"
@@ -55,7 +67,7 @@ const ShopByCtaegory = () => {
     <div className='grid  sm:grid-cols-4 md:grid-cols-5  lg:grid-cols-6'>
         {categorydata.map((ele)=>{
             return(
-                <div key={ele._id}>
+                <div key={ele._id} onClick={()=>{handlenavigate()}}>
        <img src={ele.imgurl} alt="" className='w-full'/>
        <h2 className='text-center font-bold'>{ele.title}</h2>
                 </div>
@@ -71,7 +83,7 @@ const ShopByCtaegory = () => {
     <p className='text-center'>Explore favorite looks from Instagram. Tag @Nordstrom to show us your finds.</p>
     <br />
     <br />
-    <div className='grid gap-[.7rem]  sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-4'>
+    <div id='shopbycategory' className='grid gap-[.7rem]  sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-4'>
         {currentdata.map((ele)=>{
             return(
                 <div key={ele._id}>

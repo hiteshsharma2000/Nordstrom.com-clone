@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Navsection from "../components/Navsection";
-import { Link } from "react-router-dom";
+import Navsection from "../components/navsection";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate=useNavigate()
   const [registeruser, setregisteruser] = useState({
     firstname: "",
     lastname: "",
@@ -27,7 +28,7 @@ const SignUp = () => {
   const handlesubmit =async () => {
     console.log(registeruser);
     try {
-      let response = await fetch("http://localhost:8080/users/register", { 
+      let response = await fetch("https://nordstrombackend-production.up.railway.app/users/register", { 
         method: "POST",
         body: JSON.stringify(registeruser),
         headers: {
@@ -37,6 +38,7 @@ const SignUp = () => {
       alert('new user has been created')
       let data = await response.text();
       console.log(data);
+      navigate('/login')
     } catch (error) {
       console.log(error)
       alert(error.message)

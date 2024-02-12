@@ -34,7 +34,7 @@ const Footer = () => {
       </div>
       <div id="mainfootercomponent">
         <div className="container  py-8">
-          <div className="grid grid-cols-1 ml-[-10px] mr-[-10px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 ml-[20px] mr-[-10px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
             <div className="footer-links">
               <p>Customer Service</p>
               <p>Contact Us</p>
@@ -48,52 +48,55 @@ const Footer = () => {
               <p>India</p>
             </div>
             <div className="footer-links">
-              <p>Customer Service</p>
-              <p>Contact Us</p>
-              <p>Order Status</p>
-              <p>Shipping</p>
-              <p>Return Policy & Exchanges</p>
-              <p>Price Adjustments</p>
-              <p>Gift Cards</p>
-              <p>FAQ</p>
-              <p>Product Recalls</p>
+              <p>About us</p>
+              <p>All Brands</p>
+              <p>Careers</p>
+              <p>Corporate Social Responsibility</p>
+              <p>Diversity, Equity, Inclusion & Belonging</p>
+              <p>Get Email Update</p>
+              <p>Nordstrom Blog</p>
+              <p>The Thread</p>
+              <p>Nordy Podcast</p>
               <p>India</p>
             </div>
             <div className="footer-links">
-              <p>Customer Service</p>
-              <p>Contact Us</p>
-              <p>Order Status</p>
-              <p>Shipping</p>
-              <p>Return Policy & Exchanges</p>
-              <p>Price Adjustments</p>
-              <p>Gift Cards</p>
-              <p>FAQ</p>
-              <p>Product Recalls</p>
-              <p>India</p>
+              <p>Stores & Services</p>
+              <p>Find a Store</p>
+              <p>Free Style Help</p>
+              <p>Alterations & Tailoring</p>
+              <p>Pop-In Shop</p>
+              <p>Virtual Events</p>
+              <p>Spa Nordstrom</p>
+              <p>Nordstrom Restaurants</p>
+              <p>Nordstrom Local</p>
+              
             </div>
             <div className="footer-links">
-              <p>Customer Service</p>
-              <p>Contact Us</p>
-              <p>Order Status</p>
-              <p>Shipping</p>
-              <p>Return Policy & Exchanges</p>
-              <p>Price Adjustments</p>
-              <p>Gift Cards</p>
-              <p>FAQ</p>
-              <p>Product Recalls</p>
-              <p>India</p>
+              <p>Nordstrom Card & Rewards</p>
+              <p>The Nordy Club Rewards</p>
+              <p>Pay My Bill</p>
+              <p>Manage My Nordstrom Card</p>
+             
+             
             </div>
             <div className="footer-links">
-              <p>Customer Service</p>
-              <p>Contact Us</p>
-              <p>Order Status</p>
-              <p>Shipping</p>
-              <p>Return Policy & Exchanges</p>
-              <p>Price Adjustments</p>
-              <p>Gift Cards</p>
-              <p>FAQ</p>
-              <p>Product Recalls</p>
-              <p>India</p>
+              <p>Nordstrom, Inc.</p>
+              <p>Nordstrom Rack</p>
+              <p>investor Relations</p>
+              <p>Press Releases</p>
+              <p>Nordstrom Media Network</p>
+              
+            </div>
+            <div className="footer-links">
+            <p> <i class='bx bx-devices'></i>&nbsp; Get our apps</p>
+              <br />
+             <div id='social-links'>
+             <i class='bx bxl-instagram' ></i>
+             <i class='bx bxl-pinterest-alt'></i>
+             <i class='bx bxl-twitter' ></i>
+             <i class='bx bxl-facebook-circle' ></i>
+             <i class='bx bx-plus' ></i>
+             </div> 
             </div>
           </div>
         </div>

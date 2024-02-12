@@ -1,6 +1,6 @@
 import React from "react";
 
-import Navsection from "../components/Navsection";
+import Navsection from "../components/navsection";
 import Footer from "../components/footer";
 import Thethread from "../components/Thethread";
 import Networthyslider from "../components/networthyslider";
@@ -12,6 +12,7 @@ import Category from "../components/Category";
 import SecondCategory from "../components/Second.Category";
 import ShopByCtaegory from "../components/ShopByCategory";
 import Trendingdata from "../components/Trendingdata";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -25,9 +26,11 @@ const Home = () => {
       <h2 className="mt-[4rem] heading-slider">Top picks for you</h2>
       <br />
       <SecondCategory />
-      <ProdductSlider />
+      <br />
+     < ProdductSlider />
       <br />
       <br />
+      
 
       <Networthyslider />
       <br />
@@ -35,7 +38,7 @@ const Home = () => {
       <br />
       <br />
       <br />
-
+      
       <Networthypart2 />
       <br />
       <br />
@@ -58,6 +61,7 @@ const Home = () => {
 
       <br />
       <SaleProductSlider />
+     
 
       <br />
       <br />

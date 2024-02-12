@@ -1,8 +1,41 @@
-import React from "react";
+import Cookies from "js-cookie";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Networthypart2 = () => {
+const navigate=useNavigate()
+const [networthydata,setnetworthydata]=useState([])
+
+const handlenavigate=()=>{
+  if(Cookies.get('token')){
+   navigate('/product')
+ 
+  }else{
+   navigate('/login')
+  }
+ }
+
+const getnetworthydata=async ()=>{
+  try {
+    let responce = await fetch("https://nordstrombackend-production.up.railway.app/networthy", {
+      method: "GET",
+      headers: {
+        "Conetnt-Type": "application/json",
+      },
+    });
+    responce = await responce.json();
+    setnetworthydata(responce.data);
+    console.log(responce.data);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+useEffect(()=>{
+ getnetworthydata()
+},[])
+
   return (
-    <div
+    <div 
       className="mt-[5rem] sm:mt-[12rem] md:mt-0 lg:mt-0 grid grid-cols-1 mt-0 ml-[22px] mr-[10px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-[2]"
       style={{ borderBottom: "2px solid black" }}
     >
@@ -13,33 +46,22 @@ const Networthypart2 = () => {
           Your curated roundup of this season's essentials.
         </p>
       </div>
-      <div>
-        <img
-          src="https://n.nordstrommedia.com/it/189781d5-aa3a-4bcc-98ae-3c587fc928aa.jpeg?h=382&w=402"
-          alt=""
-        />
-        <p className="grid justify-center">
-          Tailored Trousers <hr />
-        </p>
-      </div>
-      <div>
-        <img
-          src="https://n.nordstrommedia.com/it/05f65f38-1e8e-442d-afe0-c792ee186346.jpeg?h=382&w=402"
-          alt=""
-        />
-        <p className="grid justify-center">
-          Sculpted Leggings <hr />
-        </p>
-      </div>
-      <div>
-        <img
-          src="https://n.nordstrommedia.com/it/c41bb2e2-7808-481f-a21f-a8cd39d2b1a2.jpeg?h=382&w=402"
-          alt=""
-        />
-        <p className="grid justify-center">
-          Dressed-Up Denim <hr />
-        </p>
-      </div>
+      {networthydata.map((ele)=>{
+
+return(
+  <div key={ele._id} onClick={()=>{handlenavigate}}> 
+  <img
+    src={ele.imgurl}
+    alt=""
+  />
+  <p className="grid justify-center  ">
+    {ele.title} <hr />
+  </p>
+</div>
+
+)
+ })}
+      
       <br />
       <br />
       <br />

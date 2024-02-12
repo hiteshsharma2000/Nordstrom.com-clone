@@ -30,14 +30,22 @@
 .footer p {
   text-decoration: none;
   margin-right: 16px;
+ 
 }
-/* custom-carousel-styles.css */
+
 .carousel-container .react-multi-carousel-dot button {
   background-color: black !important;
 }
 
 .footer p:hover {
   color: #f00;
+}
+.footer-links p{
+  margin-top: 15px;
+}
+.footer-links p i{
+  font-size: 2rem;
+  margin: 5px;
 }
 .footer-links p:hover {
   color: #f00;
@@ -49,9 +57,10 @@
 }
 .footer-links p:first-child {
   font-weight: bolder;
-  font-size: large;
-  margin-bottom: 1em;
+  font-size: 1.1rem;
 }
+
+
 #mainfootercomponent {
   background-color: #f0f3f5;
   width: 100%;
@@ -113,5 +122,23 @@ label {
 }
 Link{
   text-decoration: none;
-  color: black;
+  font-size: 3rem;
 }
+#social-links i{
+  font-size: 2rem;
+  margin: 5px;
+
+}
+#social-links i:hover{
+  
+ color: #f00;
+
+}
+#shopbycategory div:hover{
+  cursor: pointer;
+  opacity: 40%;
+}
+
+
+
+

@@ -1,12 +1,30 @@
 import React, { useEffect, useState } from "react";
+
+import Navsection from "../components/navsection"
+
 import Cookies from 'js-cookie'
-import Navsection from "../components/Navsection";
+import { json, useNavigate } from "react-router-dom";
+
 const Product = () => {
   const [product, setproduct] = useState([]);
 
+  const navigate=useNavigate()
+
+  const addtocart=async (payload)=>{
+    if(Cookies.get('token')){
+      console.log(payload)
+    const set=await Cookies.set("Singleproduct",JSON.stringify(payload))
+    console.log(payload)
+     navigate('/singleproduct')
+    }else{
+  navigate('/login')
+    }
+
+  }
+
   const getProductdata = async () => {
     try {
-      let responce = await fetch("http://localhost:8080/product", {
+      let responce = await fetch("https://nordstrombackend-production.up.railway.app/product", {
         method: "GET",
         headers: {
           "Conetnt-Type": "application/json",
@@ -15,7 +33,7 @@ const Product = () => {
       });
       responce = await responce.json();
       setproduct(responce.data);
-      console.log(responce.data);
+      // console.log(responce.data);
     } catch (error) {
       console.log(error.message);
     }
@@ -32,17 +50,11 @@ const Product = () => {
       <br />
       <br />
     <div className="flex w-full">
-      <div
-        className="w-[80%] text-center grid gap-[2rem]"
-        style={{ border: "1px solid black" }}
+    <div
+        className="hidden sm:block md:block w-[50%] text-center "
+        style={{ border: "1px solid black", }}
       >
-        <h2>mens</h2>
-        <h2>mens</h2>
-        <h2>mens</h2>
-        <h2>mens</h2>
-        <h2>mens</h2>
-        <h2>mens</h2>
-        <h2>mens</h2>
+       <img className='w-full h-full' src="https://assets.materialup.com/uploads/5dab2841-80f7-486f-8897-36f1a86a5f0b/preview.jpg" alt="" />
       </div>
 
       <div style={{ borderTop: "2px solid black" }}>
@@ -53,10 +65,10 @@ const Product = () => {
         </h2>
         <br />
         <br />
-        <div className="grid ml-[2%] gap-[1.2rem]  sm:grid-cols-4 md:grid-cols-5  lg:grid-cols-6">
+        <div className="grid ml-[2%] gap-[1.2rem]  sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
           {product.map((ele) => {
             return (
-              <div key={ele._id}>
+              <div key={ele._id} onClick={()=>{addtocart(ele)}} className="hover:opacity-30 cursor-pointer">
                 <img
                   style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
                   src={ele.imgurl}
@@ -68,6 +80,8 @@ const Product = () => {
                 <br />
                 <p className="text-[1.2rem] font-[500]">{ele.price}</p>
                 <h2 className="text-[1.2rem]">★★★★☆</h2>
+                <br />
+               
               </div>
             );
           })}

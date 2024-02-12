@@ -9,6 +9,12 @@ const {shopRoute}=require('./routers/shopRoute');
 const {trendingRoute}=require('./routers/TrendingRoute');
 const {productRoute}=require('./routers/ProductRoute');
 const {userRoute}=require('./routers/UserRoute')
+const {threadRoute}=require('./routers/threadRoute')
+const {networthyRouter}=require('./routers/NetworthyRouter')
+const {netsliderRouter}=require('./routers/netsliderRouter')
+const {bannerRoute}=require('./routers/BannerRoute')
+
+
 const cors=require('cors')
 app.use(express.json());
 app.use(cors({
@@ -20,7 +26,10 @@ app.use(shopRoute)
 app.use(trendingRoute)
 app.use(productRoute)
 app.use("/users",userRoute)
-
+app.use('/thread',threadRoute)
+app.use('/networthy',networthyRouter)
+app.use('/sliderdata1',netsliderRouter)
+app.use('/banner',bannerRoute)
 app.get('/',(req,res)=>{
     try {
         res.status(200).json({msg:"welcome you are on Home page"})

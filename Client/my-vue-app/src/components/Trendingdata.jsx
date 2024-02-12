@@ -1,11 +1,24 @@
 import React, { useEffect, useState } from "react";
-
+import Cookies from 'js-cookie'
+import { json, useNavigate } from "react-router-dom";
 const Trendingdata = () => {
   const [trendingdata, setTrendingdata] = useState([]);
+  const navigate=useNavigate()
+
+  const addtocart=async (payload)=>{
+    if(Cookies.get('token')){
+      console.log(payload)
+    const set=await Cookies.set("Singleproduct",JSON.stringify(payload))
+     navigate('/singleproduct')
+    }else{
+  navigate('/login')
+    }
+
+  }
 
   const getTrendingdata = async () => {
     try {
-      let responce = await fetch("http://localhost:8080/trending", {
+      let responce = await fetch("https://nordstrombackend-production.up.railway.app/trending", {
         method: "GET",
         headers: {
           "Conetnt-Type": "application/json",
@@ -26,14 +39,14 @@ const Trendingdata = () => {
       <br />
       <br />
       <h2 className="text-center text-[1.2rem] font-[500]">
-        S H O P &nbsp; B Y &nbsp; C A T E G O R Y
+        T R E N D I N G &nbsp; N E A R &nbsp; Y O U  
       </h2>
       <br />
       <br />
       <div className="grid ml-[2%] gap-[1.2rem]  sm:grid-cols-4 md:grid-cols-5  lg:grid-cols-6">
         {trendingdata.map((ele) => {
           return (
-            <div key={ele._id}>
+            <div key={ele._id} onClick={()=>{addtocart(ele)}} className="cursor-pointer hover:opacity-30 m-[4px]">
               <img
                 style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
                 src={ele.imgurl}

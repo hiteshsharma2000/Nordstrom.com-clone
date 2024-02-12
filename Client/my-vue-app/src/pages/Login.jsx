@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Cookies from 'js-cookie'
 import { useNavigate } from "react-router-dom";
-import Navsection from "../components/Navsection";
+import Navsection from "../components/navsection";
 const Login = () => {
   const navigate = useNavigate();
   const [loginuser, setloginuser] = useState({
@@ -19,7 +19,7 @@ const Login = () => {
   const handlesubmit = async() => {
     console.log(loginuser);
     try {
-      let response = await fetch("http://localhost:8080/users/login", { 
+      let response = await fetch("https://nordstrombackend-production.up.railway.app/users/login", { 
         method: "POST",
         body: JSON.stringify(loginuser),
         headers: {

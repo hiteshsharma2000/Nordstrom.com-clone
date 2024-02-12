@@ -1,13 +1,29 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Cookies from 'js-cookie'
+import { json, useNavigate } from "react-router-dom";
+
 
 const SaleProductSlider = () => {
   const [slidesdata, setslidesdata] = useState([]);
 
+  const navigate=useNavigate()
+
+  const addtocart=async (payload)=>{
+    if(Cookies.get('token')){
+      console.log(payload)
+    const set=await Cookies.set("Singleproduct",JSON.stringify(payload))
+     navigate('/singleproduct')
+    }else{
+  navigate('/login')
+    }
+
+  }
+
   const getsliderdata = async () => {
     try {
-      let responce = await fetch("http://localhost:8080/getslider", {
+      let responce = await fetch("https://nordstrombackend-production.up.railway.app/getslider", {
         method: "GET",
         headers: {
           "Conetnt-Type": "application/json",
@@ -67,7 +83,7 @@ const SaleProductSlider = () => {
       >
         {slidesdata.map((ele) => {
           return (
-            <div key={ele._id}>
+            <div key={ele._id} onClick={()=>{addtocart(ele)}} className="cursor-pointer hover:opacity-30 m-[4px]" >
               <img src={ele.imgurl} alt="" />
               <h2>{ele.title}</h2>
               <br />

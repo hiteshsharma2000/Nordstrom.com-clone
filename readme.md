@@ -93,4 +93,5 @@ Responsive Design: The website is designed to be responsive, ensuring a consiste
 Product Details: View comprehensive information about each product, including descriptions, pricing, availability, and customer reviews.
 
 Checkout Process: Users can securely complete their purchases, inputting shipping and payment information with confidence.
+
 ---

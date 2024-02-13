@@ -1,6 +1,6 @@
 
 
-# NordStrom-clone-website
+# NordStorm-clone-website
 
 <h3>Buy latest and trending clothes</h3>
 

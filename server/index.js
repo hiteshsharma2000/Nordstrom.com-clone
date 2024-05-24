@@ -17,9 +17,13 @@ const {bannerRoute}=require('./routers/BannerRoute')
 
 const cors=require('cors')
 app.use(express.json());
-app.use(cors({
+
+app.use(cors{
     origin:"*"
-}))
+})
+
+
+
 app.use(sliderRouter)
 app.use(categoryRoute)
 app.use(shopRoute)

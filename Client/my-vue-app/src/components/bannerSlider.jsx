@@ -26,7 +26,7 @@ const handlenavigate=()=>{
 }
 const getbannerdata=async ()=>{
   try {
-    let responce = await fetch("https://nordstrombackend-production.up.railway.app/banner/", {
+    let responce = await fetch("https://nordstrom-com-clone-7pestue76-hiteshsharma2000s-projects.vercel.app/banner", {
       method: "GET",
       headers: {
         "Conetnt-Type": "application/json",

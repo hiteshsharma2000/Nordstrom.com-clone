@@ -28,7 +28,7 @@ const SignUp = () => {
   const handlesubmit =async () => {
     console.log(registeruser);
     try {
-      let response = await fetch("https://nordstrombackend-production.up.railway.app/users/register", { 
+      let response = await fetch("https://nordstrombackend-cej0unf54-hiteshsharma2000s-projects.vercel.app/users/register", { 
         method: "POST",
         body: JSON.stringify(registeruser),
         headers: {

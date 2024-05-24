@@ -8,10 +8,10 @@
 
 ## project deploy link
   Deploy Link -
-  Netlify: https://fluffy-haupia-7095af.netlify.app/
+  Netlify: https://665065c240d3910fabdc89ca--gleeful-belekoy-500473.netlify.app/
 ## Backend deploy link
   Deploy Link -
-  Railway link: https://nordstrombackend-production.up.railway.app/
+  vercel link: https://nordstrombackend-cej0unf54-hiteshsharma2000s-projects.vercel.app/
 
 
 ---

@@ -17,7 +17,7 @@ const handlenavigate=()=>{
 
 const getnetworthydata=async ()=>{
   try {
-    let responce = await fetch("https://nordstrombackend-production.up.railway.app/networthy", {
+    let responce = await fetch("https://nordstrombackend-cej0unf54-hiteshsharma2000s-projects.vercel.app/networthy", {
       method: "GET",
       headers: {
         "Conetnt-Type": "application/json",

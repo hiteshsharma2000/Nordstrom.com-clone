@@ -21,7 +21,7 @@ const ShopByCtaegory = () => {
 
     const getcategorydata=async ()=>{
         try {
-            let responce=await fetch('https://nordstrombackend-production.up.railway.app/category',{
+            let responce=await fetch('https://nordstrombackend-cej0unf54-hiteshsharma2000s-projects.vercel.app/category',{
                 method:"GET",
                 headers:{
                     "Conetnt-Type":"application/json"

@@ -6,7 +6,7 @@ const Thethread = () => {
 
     const getthreaddata = async () => {
       try {
-        let responce = await fetch("https://nordstrombackend-production.up.railway.app/thread", {
+        let responce = await fetch("https://nordstrombackend-cej0unf54-hiteshsharma2000s-projects.vercel.app/thread", {
           method: "GET",
           headers: {
             "Conetnt-Type": "application/json",

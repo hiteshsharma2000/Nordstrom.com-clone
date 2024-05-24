@@ -13,7 +13,7 @@ const [slider1data,setslider1data]=useState([])
 
 const getsliderdata=async ()=>{
   try {
-    let responce = await fetch("https://nordstrombackend-production.up.railway.app/sliderdata1/", {
+    let responce = await fetch("https://nordstrombackend-cej0unf54-hiteshsharma2000s-projects.vercel.app/sliderdata1/", {
       method: "GET",
       headers: {
         "Conetnt-Type": "application/json",

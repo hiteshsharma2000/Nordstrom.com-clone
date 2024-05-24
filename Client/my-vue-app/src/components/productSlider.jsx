@@ -26,7 +26,7 @@ const navigate=useNavigate()
 
   const getsliderdata = async () => {
     try {
-      let responce = await fetch("https://nordstrombackend-production.up.railway.app/getslider", {
+      let responce = await fetch("https://nordstrombackend-cej0unf54-hiteshsharma2000s-projects.vercel.app/getslider", {
         method: "GET",
         headers: {
           "Conetnt-Type": "application/json",
